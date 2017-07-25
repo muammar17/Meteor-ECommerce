@@ -1,0 +1,12 @@
+<template name="ShoppingList">
+	<h1 class="page-tittle">My Shopping List</h1>
+	<ul class="shopping-list">
+		{{#each shoppingList}}
+			{{#each books}}
+				<li>{{name}} - <span class="price">{{price}}</span></li>
+			{{/each}}
+		{{else}}
+			<li>Silahkan tambah <a href="/category-book">kategori</a> untuk menu anda</li>
+		{{/each}}
+	</ul>
+</template>

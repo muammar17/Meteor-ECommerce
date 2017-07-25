@@ -1,0 +1,12 @@
+<template name="Categories">
+	{{> NewCategory}}	
+	<section class="categories">
+		{{#if Template.subscriptionsReady}}
+			{{#each categories}}
+				{{> Category}}
+			{{/each}}
+		{{else}}
+			<p>Loading</p>
+		{{/if}}
+	</section>
+</template>

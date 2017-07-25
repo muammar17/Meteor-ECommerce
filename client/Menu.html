@@ -1,0 +1,15 @@
+<template name="Menu">
+	<h1 class="page-tittle">My Menu</h1>
+	{{#each categories}}
+		{{> MenuItem}}
+	{{else}}
+		<h3>Tambah <a href="/category-book">Kategori</a> yang anda inginkan</h3>
+	{{/each}}
+</template> 
+
+<template name="MenuItem">
+	<div class="menu-item">
+		<h3>{{name}}</h3>
+		<p>{{desc}}</p>		
+	</div>
+</template>

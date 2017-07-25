@@ -1,0 +1,24 @@
+<template name="Category">
+	<article class="category {{#if inMenu}}in-menu{{/if}}">
+		<h3>{{name}}</h3>
+		{{#if $.Session.get 'editMode'}} <!-- menampilkan update -->
+			{{> quickForm collection="Categories" id=updateCategoryId type="update" doc=this autosave=true}} <!-- update kategori -->
+		{{else}}
+			<p>{{desc}}</p>
+			<p>
+			{{#each books}}
+				<span class="book">{{name}} - {{price}}</span>
+			{{/each}}
+			</p>
+			<a href="/category/{{_id}}">View Details</a>
+			{{#if inMenu}}
+				<button class="btn-deny toggle-menu">Remove from Menu</button>
+			{{else}}
+				<button class="btn-primary toggle-menu">Add to Menu</button>
+			{{/if}}
+		{{/if}}
+			
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
+	</article>
+</template>
